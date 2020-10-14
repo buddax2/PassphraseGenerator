@@ -1,3 +1,3 @@
 # PassphraseGenerator
 
-A description of this package.
+An easy way to generate passphrase using Diceware.
