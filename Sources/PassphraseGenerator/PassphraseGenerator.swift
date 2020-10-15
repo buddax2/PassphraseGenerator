@@ -17,6 +17,10 @@ public struct PassphraseGenerator {
         return dicewareEntries
     }()
     
+    public init() {
+            
+    }
+
     func throwDie() -> Int {
         return Int(arc4random() % 6) + 1
     }
