@@ -1,6 +1,6 @@
 import Foundation
 
-struct PassphraseGenerator {
+public struct PassphraseGenerator {
 
     var dicewareEntries: [String: String] = {
         let dicewarePath = Bundle.module.path(forResource: "diceware", ofType: "txt")!
@@ -25,13 +25,13 @@ struct PassphraseGenerator {
         return (0..<n).map { _ in return throwDie() }
     }
     
-    func randomWord() -> String {
+    public func randomWord() -> String {
         let number = throwNDice(n: 5).map({ String($0) }).joined()
         let phrase = dicewareEntries[number]
         return phrase!
     }
     
-    func randomPhrase(lenght: Int, separator: String = "-") -> String {
+    public func randomPhrase(lenght: Int, separator: String = "-") -> String {
         return (0..<lenght).map({ _ in randomWord()}).joined(separator: separator)
     }
 }
